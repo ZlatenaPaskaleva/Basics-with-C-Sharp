@@ -1,0 +1,17 @@
+int plasticCoverSqMeters = int.Parse(Console.ReadLine());
+int paintInLiters = int.Parse(Console.ReadLine());
+int diolverInLiters = int.Parse(Console.ReadLine());
+int hoursOfWork = int.Parse(Console.ReadLine());
+
+double plasticCoverPricePerSqMeter = 1.50;
+double paintPricePerLiter = 14.50;
+double disolverPricePerLiter = 5.00;
+double bags = 0.40;
+
+double sumForMaterials = ((plasticCoverSqMeters + 2) * plasticCoverPricePerSqMeter) + ((paintInLiters + (paintInLiters * 0.10)) * paintPricePerLiter) + (diolverInLiters * disolverPricePerLiter) + bags;
+
+double workersPricePerHour = sumForMaterials * 0.30;
+
+double totalExpenses = sumForMaterials + (workersPricePerHour * hoursOfWork);
+
+Console.WriteLine(totalExpenses);
