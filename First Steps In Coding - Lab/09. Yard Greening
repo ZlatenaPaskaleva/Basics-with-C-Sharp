@@ -1,0 +1,7 @@
+double sqMeters = double.Parse(Console.ReadLine());
+
+double sumNeeded = sqMeters * 7.61;
+double discount = sumNeeded * 0.18;
+
+Console.WriteLine($"The final price is: {sumNeeded - discount} lv.");
+Console.WriteLine($"The discount is: {discount} lv.");
