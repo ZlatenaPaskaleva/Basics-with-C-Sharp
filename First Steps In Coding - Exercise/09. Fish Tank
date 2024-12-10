@@ -1,0 +1,11 @@
+int lenght = int.Parse(Console.ReadLine());
+int width = int.Parse(Console.ReadLine());
+int height = int.Parse(Console.ReadLine());
+double percent = double.Parse(Console.ReadLine());
+
+int aquariumVolume = lenght * width * height;
+double volumeInLiters = (double)aquariumVolume / 1000;
+double filled = percent / 100;
+double letersNeeded = volumeInLiters * (1 - filled);
+
+Console.WriteLine(letersNeeded);
