@@ -1,0 +1,9 @@
+int catsFoodPack = int.Parse(Console.ReadLine());
+int dogsFoodPack = int.Parse((Console.ReadLine()));
+
+double totalSumForCatsFood = catsFoodPack * 2.50;
+double totalSumForDogsFood = dogsFoodPack * 4;
+
+double totalNeeded = totalSumForCatsFood + totalSumForDogsFood;
+
+Console.WriteLine($"{totalNeeded} lv.");
