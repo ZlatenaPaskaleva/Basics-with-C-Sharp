@@ -1,0 +1,33 @@
+string figure = Console.ReadLine();
+
+double area = 0;
+
+if (figure == "rectangle")
+{
+    double lenght1 = double.Parse(Console.ReadLine());
+    double lenght2 = double.Parse(Console.ReadLine());
+
+     area = lenght1 * lenght2;
+
+}
+else if (figure == "circle")
+{
+    double radius = double.Parse(Console.ReadLine());
+
+    area = Math.PI * (Math.Pow(radius, 2));
+}
+else if (figure == "triangle")
+{
+    double lenght = double.Parse(Console.ReadLine());
+    double hight = double.Parse(Console.ReadLine());
+
+    area = (hight * lenght) / 2;
+}
+else if (figure == "square")
+{
+    double lenght = double.Parse(Console.ReadLine());
+
+    area = lenght * lenght;
+}
+
+Console.WriteLine($"{area:F3}");
