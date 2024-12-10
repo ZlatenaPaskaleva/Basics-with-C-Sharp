@@ -1,0 +1,10 @@
+double sum = double.Parse(Console.ReadLine());
+int months = int.Parse(Console.ReadLine());
+double percent = double.Parse(Console.ReadLine());
+
+double intrestPerYear = sum * (percent / 100);
+double intrestPerMonth = intrestPerYear / 12;
+
+double intrest = sum + months * intrestPerMonth;
+
+Console.WriteLine(intrest);
