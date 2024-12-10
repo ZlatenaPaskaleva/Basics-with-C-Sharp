@@ -1,0 +1,10 @@
+double oneYearTrainingPrice = double.Parse(Console.ReadLine());
+
+double sportShoesPrice = oneYearTrainingPrice - (oneYearTrainingPrice * 0.40);
+double sportClothesPrice = sportShoesPrice - (sportShoesPrice * 0.20);
+double ballPrice = sportClothesPrice / 4;
+double accseories = ballPrice / 5;
+
+double total = oneYearTrainingPrice + sportShoesPrice + sportClothesPrice + ballPrice + accseories;
+
+Console.WriteLine(total);
