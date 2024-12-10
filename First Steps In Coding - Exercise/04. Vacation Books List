@@ -1,0 +1,8 @@
+int numOfPages = int.Parse(Console.ReadLine());
+int pagesPerHour = int.Parse(Console.ReadLine());
+int days = int.Parse(Console.ReadLine());
+
+int numOfPagesPerDay = numOfPages / days;
+int hourReadingPerDay = numOfPagesPerDay / pagesPerHour;
+
+Console.WriteLine(hourReadingPerDay);
