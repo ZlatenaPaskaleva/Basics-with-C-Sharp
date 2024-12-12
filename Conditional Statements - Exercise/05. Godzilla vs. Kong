@@ -1,0 +1,24 @@
+double movieBuget = double.Parse(Console.ReadLine());
+int statistCount = int.Parse(Console.ReadLine());
+double clothesPricePerStatist = double.Parse(Console.ReadLine());
+
+double decorPrice = movieBuget * 0.10;
+
+double totalPriceForClothes = statistCount * clothesPricePerStatist;
+
+if (statistCount > 150)
+{
+    totalPriceForClothes = totalPriceForClothes - (totalPriceForClothes * 0.10);
+}
+double totalNeeded = totalPriceForClothes + decorPrice;
+
+if (totalNeeded <= movieBuget)
+{
+    Console.WriteLine("Action!");
+    Console.WriteLine($"Wingard starts filming with {movieBuget - totalNeeded:f2} leva left.");
+}
+else
+{
+    Console.WriteLine("Not enough money!");
+    Console.WriteLine($"Wingard needs {totalNeeded - movieBuget:f2} leva more.");
+}
