@@ -1,0 +1,34 @@
+double tripPrice = double.Parse(Console.ReadLine());
+int puzzles = int.Parse(Console.ReadLine());
+int talkingDolls = int.Parse(Console.ReadLine());
+int teddyBears = int.Parse(Console.ReadLine()); 
+int minions = int.Parse(Console.ReadLine());
+int truckToys = int.Parse(Console.ReadLine());
+
+double puzzlePrice = 2.60;
+double talkingDollPrice = 3.00;
+double teddyBearPrice = 4.10;
+double minionPrice = 8.20;
+double truckToyPrice = 2.00;
+
+int totalNumOfToysOrdered = puzzles + talkingDolls + teddyBears + minions + truckToys;
+
+double orderValue = (puzzles * puzzlePrice) + (talkingDolls * talkingDollPrice) + (teddyBears * teddyBearPrice) + (minions * minionPrice) + (truckToys * truckToyPrice);
+
+if (totalNumOfToysOrdered >= 50)
+{
+    orderValue = orderValue - (orderValue * 0.25);
+
+}
+double rent = orderValue * 0.10;
+
+double total = orderValue - rent;
+
+if (total >= tripPrice)
+{
+    Console.WriteLine($"Yes! {total - tripPrice:f2} lv left.");
+}
+else
+{
+    Console.WriteLine($"Not enough money! {tripPrice - total:f2} lv needed.");
+}
