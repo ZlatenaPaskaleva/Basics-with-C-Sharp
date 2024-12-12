@@ -1,0 +1,20 @@
+double recordInSec = double.Parse(Console.ReadLine());
+double meters = double.Parse(Console.ReadLine());
+double secontsPerMeter = double.Parse(Console.ReadLine());
+
+double totalSec = meters * secontsPerMeter;
+
+if (meters >= 15)
+{
+    double slowerCount = Math.Floor(meters / 15);
+    totalSec += slowerCount * 12.5;
+}
+
+if (totalSec < recordInSec)
+{
+    Console.WriteLine($" Yes, he succeeded! The new world record is {totalSec:f2} seconds.");
+}
+else
+{
+    Console.WriteLine($"No, he failed! He was {totalSec - recordInSec:f2} seconds slower.");
+}
