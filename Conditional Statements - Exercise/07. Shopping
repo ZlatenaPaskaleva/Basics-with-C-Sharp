@@ -1,0 +1,25 @@
+double buget = double.Parse(Console.ReadLine());
+int videoCardsCount = int.Parse(Console.ReadLine());
+int procesorsCount = int.Parse(Console.ReadLine());
+int ramMemoryCount = int.Parse(Console.ReadLine());
+
+double videoCardPrice = 250;
+double moneyNeededForVideoCardsTotal = videoCardsCount * videoCardPrice;
+double procesorPrice = moneyNeededForVideoCardsTotal * 0.35;
+double ramMemoryPrice = moneyNeededForVideoCardsTotal * 0.10;
+
+double amountNeeded = moneyNeededForVideoCardsTotal + (procesorsCount * procesorPrice) + (ramMemoryCount * ramMemoryPrice);
+
+if (videoCardsCount > procesorsCount)
+{
+    amountNeeded = amountNeeded - (amountNeeded * 0.15);
+}
+
+if (buget >= amountNeeded)
+{
+    Console.WriteLine($"You have {buget - amountNeeded:f2} leva left!");
+}
+else
+{
+    Console.WriteLine($"Not enough money! You need {amountNeeded - buget:f2} leva more!");
+}
