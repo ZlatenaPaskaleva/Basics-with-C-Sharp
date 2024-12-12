@@ -1,0 +1,17 @@
+string movie = Console.ReadLine();
+int durationOfTheMovie = int.Parse(Console.ReadLine());
+int durationOfTheBreak = int.Parse(Console.ReadLine());
+
+double lunchTime = (double)durationOfTheBreak * 1/8;
+double relaxTime = (double)durationOfTheBreak * 1/4;
+
+double timeLeft = durationOfTheBreak - lunchTime - relaxTime;
+
+if (timeLeft >= durationOfTheMovie)
+{
+    Console.WriteLine($"You have enough time to watch {movie} and left with {Math.Ceiling(timeLeft - durationOfTheMovie)} minutes free time.");
+}
+else
+{
+    Console.WriteLine($"You don't have enough time to watch {movie}, you need {Math.Ceiling(durationOfTheMovie - timeLeft)} more minutes.");
+}
