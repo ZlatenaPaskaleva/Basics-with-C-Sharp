@@ -1,0 +1,56 @@
+string flowers = Console.ReadLine();
+int flowersCount = int.Parse(Console.ReadLine());
+double buget = double.Parse(Console.ReadLine());
+
+double totalPrice = 0;
+
+if (flowers == "Roses")
+{
+    totalPrice = 5 * flowersCount;
+    if (flowersCount > 80)
+    {
+        totalPrice -= totalPrice * 0.10;
+    }
+}
+else if (flowers == "Dahlias")
+{
+    totalPrice = 3.80 * flowersCount;
+    if (flowersCount > 90)
+    {
+        totalPrice -= totalPrice * 0.15;
+    }
+}
+else if (flowers == "Tulips")
+{
+    totalPrice = 2.80 * flowersCount;
+    if (flowersCount > 80)
+    {
+        totalPrice -= totalPrice * 0.15;
+    }
+}
+else if (flowers == "Narcissus")
+{
+    totalPrice = 3 * flowersCount;
+    if (flowersCount < 120)
+    {
+        totalPrice += totalPrice * 0.15;
+    }
+}
+else if (flowers == "Gladiolus")
+{
+    totalPrice = 2.50 * flowersCount;
+    if (flowersCount < 80)
+    {
+        totalPrice += totalPrice * 0.20;
+    }
+}
+if (totalPrice > buget)
+{
+    Console.WriteLine($"Not enough money, you need {totalPrice - buget:f2} leva more.");
+}
+else
+{
+    Console.WriteLine($"Hey, you have a great garden with {flowersCount} {flowers} and {buget - totalPrice:f2} leva left.");
+}
+
+
