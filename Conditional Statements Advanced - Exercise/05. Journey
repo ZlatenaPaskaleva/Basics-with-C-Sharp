@@ -1,0 +1,44 @@
+double buget = double.Parse(Console.ReadLine());
+string season = Console.ReadLine();
+
+string destination = "";
+string vacationType = "";
+double price = 0;
+
+if (buget <= 100)
+{
+    destination = "Bulgaria";
+	if (season == "summer")
+	{
+		price = buget * 0.30;
+		vacationType = "Camp";
+
+    }
+	else if (season == "winter")
+	{
+		price = buget * 0.7;
+		vacationType = "Hotel";
+	}
+}
+else if (buget > 100 && buget <= 1000)
+{
+	destination = "Balkans";
+	if (season == "summer")
+	{
+		price = buget * 0.4;
+		vacationType = "Camp";
+	}
+	else if (season == "winter")
+	{
+		price = buget * 0.8;
+		vacationType = "Hotel";
+	}
+}
+else if (buget > 1000)
+{
+	destination = "Europe";
+	price = buget * 0.9;
+	vacationType = "Hotel";
+}
+Console.WriteLine($"Somewhere in {destination}");
+Console.WriteLine($"{vacationType} - {price:f2}");
