@@ -1,0 +1,19 @@
+int hour = int.Parse(Console.ReadLine());
+string dayOfTheWeek = Console.ReadLine();
+
+if (hour >= 10 && hour <= 18)
+{
+	if (dayOfTheWeek == "Monday" || dayOfTheWeek == "Tuesday" || dayOfTheWeek == "Wednesday" || dayOfTheWeek == "Thursday" || dayOfTheWeek == "Firday" || dayOfTheWeek == "Saturday")
+	{
+        Console.WriteLine("open");
+    }
+	else
+	{
+		Console.WriteLine("closed");
+	}
+	
+}
+else if (hour < 10 || hour > 18)
+{
+	Console.WriteLine("closed");
+}
