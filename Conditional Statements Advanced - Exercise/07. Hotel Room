@@ -1,0 +1,47 @@
+string month = Console.ReadLine();
+int numOfNights = int.Parse(Console.ReadLine());
+
+double pricePerNightStudio = 0;
+double pricePerNightAp = 0;
+
+
+if (month == "May" || month == "October")
+{
+    pricePerNightStudio = 50;
+    pricePerNightAp = 65;
+    
+    if (numOfNights > 7 && numOfNights <= 14)
+    {
+        pricePerNightStudio -= pricePerNightStudio * 0.05;
+    }
+    else if (numOfNights > 14)
+    {
+        pricePerNightStudio -= pricePerNightStudio * 0.30;
+        pricePerNightAp -= pricePerNightAp * 0.10;
+    }
+    
+}
+else if (month == "June" || month == "September")
+{
+    pricePerNightStudio = 75.20;
+    pricePerNightAp = 68.70;
+    if (numOfNights > 14)
+    {
+        pricePerNightStudio -= pricePerNightStudio * 0.20;
+        pricePerNightAp -= pricePerNightAp * 0.10;
+    }
+}
+else if (month == "July" || month == "August")
+{
+    pricePerNightStudio = 76;
+    pricePerNightAp = 77;
+    if (numOfNights > 14)
+    {
+        pricePerNightAp -= pricePerNightAp * 0.10;
+    }
+}
+double priceStudio = numOfNights * pricePerNightStudio;
+double priceAp = numOfNights * pricePerNightAp;
+
+Console.WriteLine($"Apartment: {priceAp:f2} lv.");
+Console.WriteLine($"Studio: {priceStudio:f2} lv.");
