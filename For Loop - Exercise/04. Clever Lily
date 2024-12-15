@@ -1,0 +1,33 @@
+int age = int.Parse(Console.ReadLine());
+double washingMachinePrice = double.Parse(Console.ReadLine());
+double singleToyPrice = double.Parse(Console.ReadLine());
+
+double moneyFromBday = 0;
+int toysCount = 0;
+int bdGift = 10;
+
+for (int i = 1; i <= age; i++)
+{
+	if (i % 2 == 0)
+	{
+		moneyFromBday += bdGift;
+		moneyFromBday -= 1;
+		bdGift += 10;
+	}
+	else
+	{
+		toysCount++;
+	}
+}
+
+moneyFromBday += toysCount * singleToyPrice;
+
+if (moneyFromBday >= washingMachinePrice)
+{
+	Console.WriteLine($"Yes! {(moneyFromBday - washingMachinePrice):f2}");
+}
+else
+{
+	Console.WriteLine($"No! {(washingMachinePrice - moneyFromBday):f2}");
+}
+
