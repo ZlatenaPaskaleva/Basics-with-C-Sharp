@@ -1,0 +1,63 @@
+int hourExam = int.Parse(Console.ReadLine());
+int minExam = int.Parse(Console.ReadLine());
+int hourArrived = int.Parse(Console.ReadLine());
+int minArrived = int.Parse(Console.ReadLine());
+
+int totalMinExam = (hourExam * 60) + minExam;
+int totalMinArrived = (hourArrived * 60) + minArrived;
+
+int minutesDiff = totalMinExam - totalMinArrived;
+
+int hoursDiffResult = minutesDiff / 60;
+int minutesDiffResult = minutesDiff % 60;
+
+string result = "";
+
+if (minutesDiff > 30)
+{
+    result = "Early";
+}
+else if (minutesDiff >= 0 && minutesDiff <= 30)
+{
+    result = "On time";
+}
+else
+{
+    result = "Late";
+}
+
+if (result == "Early")
+{
+    Console.WriteLine("Early");
+
+    if (hoursDiffResult == 0)
+    {
+        Console.WriteLine($"{Math.Abs(minutesDiffResult)} minutes before the start");
+    }
+    else
+    {
+        Console.WriteLine($"{Math.Abs(hoursDiffResult)}:{Math.Abs(minutesDiffResult):d2} hours before the start");
+    }
+
+}
+else if (result == "On time")
+{
+    Console.WriteLine("On time");
+    if (minutesDiff != 0)
+    {
+        Console.WriteLine($"{Math.Abs(minutesDiffResult)} minutes before the start");
+    }
+}
+else if (result == "Late")
+{
+    Console.WriteLine("Late");
+    if (hoursDiffResult == 0)
+    {
+        Console.WriteLine($"{Math.Abs(minutesDiffResult)} minutes after the start");
+    }
+    else
+    {
+        Console.WriteLine($"{Math.Abs(hoursDiffResult)}:{Math.Abs(minutesDiffResult):d2} hours after the start");
+    }
+}
+
