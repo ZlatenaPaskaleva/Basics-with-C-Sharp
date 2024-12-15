@@ -1,0 +1,19 @@
+string name = Console.ReadLine();
+double academicPoints = double.Parse(Console.ReadLine());
+int numberOfevaluators = int.Parse(Console.ReadLine());
+
+for (int i = 0; i < numberOfevaluators; i++)
+{
+    string nameEvaluator = Console.ReadLine();
+    double points = double.Parse(Console.ReadLine());
+
+    double totalPoints = nameEvaluator.Length * points / 2;
+    
+    academicPoints += totalPoints;
+    if (academicPoints > 1250.50)
+    {
+        Console.WriteLine($"Congratulations, {name} got a nominee for leading role with {academicPoints:f1}!");
+        return;
+    }
+}
+Console.WriteLine($"Sorry, {name} you need {(1250.50 - academicPoints):f1} more!");
