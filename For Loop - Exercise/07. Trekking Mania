@@ -1,0 +1,47 @@
+int numOfgroups = int.Parse(Console.ReadLine());
+
+int peak1 = 0;
+int peak2 = 0;
+int peak3 = 0;
+int peak4 = 0;
+int peak5 = 0;
+
+int pplCount = 0;
+
+for (int i = 0;i < numOfgroups; i++)
+{
+    int numOfPpl = int.Parse(Console.ReadLine());
+	pplCount += numOfPpl;
+
+    if (numOfPpl <= 5)
+	{
+		peak1 += numOfPpl;
+	}
+	else if (numOfPpl >= 6 && numOfPpl <= 12)
+	{
+		peak2 += numOfPpl;
+	}
+	else if (numOfPpl >= 13 && numOfPpl <= 25)
+	{
+		peak3 += numOfPpl;
+	}
+	else if (numOfPpl >= 26 && numOfPpl <= 40)
+	{
+		peak4 += numOfPpl;
+	}
+	else if (numOfPpl >= 41)
+	{
+		peak5 += numOfPpl;
+	}
+}
+double peak1Percent = (double)peak1 / pplCount * 100;
+double peak2Percent = (double)peak2 / pplCount * 100;
+double peak3Percent = (double)peak3 / pplCount * 100;
+double peak4Percent = (double)peak4 / pplCount * 100;
+double peak5Percent = (double)peak5 / pplCount * 100;
+
+Console.WriteLine($"{peak1Percent:f2}%");
+Console.WriteLine($"{peak2Percent:f2}%");
+Console.WriteLine($"{peak3Percent:f2}%");
+Console.WriteLine($"{peak4Percent:f2}%");
+Console.WriteLine($"{peak5Percent:f2}%");
