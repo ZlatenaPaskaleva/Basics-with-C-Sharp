@@ -1,0 +1,31 @@
+int tournaments = int.Parse(Console.ReadLine());
+int pointsStarting = int.Parse(Console.ReadLine());
+
+int points = 0;
+int countW = 0;
+
+for (int i = 0; i < tournaments; i++)
+{
+    string stage = Console.ReadLine();
+
+	if (stage == "W")
+	{
+		points += 2000;
+		countW += 1;
+
+    }
+	else if (stage == "F")
+	{
+		points += 1200;
+    }
+	else if (stage == "SF")
+	{
+		points += 720;
+	}
+}
+
+int totalPoints = points + pointsStarting;
+
+Console.WriteLine($"Final points: {totalPoints}");
+Console.WriteLine($"Average points: {Math.Floor((double)points / tournaments)}");
+Console.WriteLine($"{(double)countW / tournaments * 100:f2}%");
