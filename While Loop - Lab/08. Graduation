@@ -1,0 +1,32 @@
+string name = Console.ReadLine();
+double marks = double.Parse(Console.ReadLine());
+double marksCount = 0;
+int grade = 1;
+int fellCount = 0;
+
+while (true)
+{
+    if (marks < 4)
+	{
+		fellCount++;
+		if (fellCount > 1)
+		{
+            Console.WriteLine($"{name} has been excluded at {grade} grade");
+			break;
+        }
+	}
+	else
+	{
+		marksCount += marks;
+		grade++;
+		if (grade > 12)
+		{
+            Console.WriteLine($"{name} graduated. Average grade: {marksCount / 12:f2}");
+			break;
+        }
+
+    }
+
+	marks = double.Parse(Console.ReadLine());
+
+}
