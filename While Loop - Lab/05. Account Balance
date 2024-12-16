@@ -1,0 +1,23 @@
+string command = Console.ReadLine();
+double sum = 0;
+double amount = 0;
+
+while (true)
+{
+    if (command == "NoMoreMoney")
+    {
+        Console.WriteLine($"Total: {sum:F2}");
+        break;
+    }
+    amount = double.Parse(command);
+    if (amount < 0)
+    {
+        Console.WriteLine("Invalid operation!");
+        Console.WriteLine($"Total: {sum:F2}");
+        break; ;
+    }
+
+    sum += amount;
+    Console.WriteLine($"Increase: {amount:F2}");
+    command = Console.ReadLine();
+}
