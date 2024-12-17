@@ -1,0 +1,50 @@
+double change = double.Parse(Console.ReadLine());
+
+int cointsCount = 0;
+
+while (change > 0)
+{
+    change = Math.Round(change, 2);
+    if (change >= 2)
+	{
+		change -= 2;
+		cointsCount++;
+    }
+	else if (change >= 1)
+	{
+		change -= 1;
+		cointsCount++;
+	}
+	else if (change >= 0.50)
+	{
+		change -= 0.50;
+		cointsCount++;
+	}
+	else if (change >= 0.20)
+	{
+		change -= 0.20;
+		cointsCount++;
+	}
+	else if (change >= 0.10)
+	{
+		change -= 0.10;
+		cointsCount++;
+	}
+	else if (change >= 0.05)
+	{
+		change -= 0.05;
+		cointsCount++;
+	}
+	else if (change >= 0.02)
+	{
+		change -= 0.02;
+		cointsCount++;
+
+	}
+	else if (change >= 0.01)
+	{
+		change -= 0.01;
+		cointsCount++;
+	}
+}
+Console.WriteLine(cointsCount);
