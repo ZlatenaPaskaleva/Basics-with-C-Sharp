@@ -1,0 +1,36 @@
+int lowMarks = int.Parse(Console.ReadLine());
+int lowMarksCount = 0;
+int tasksCount = 0;
+double marksCount = 0;
+string lastTask = "";
+bool isFaild  = true;
+
+while (lowMarksCount < lowMarks)
+{
+    string command = Console.ReadLine();
+    if (command == "Enough")
+	{
+        isFaild = false;
+        break;
+    }
+	lastTask = command;
+    int mark = int.Parse(Console.ReadLine());
+	tasksCount += 1;
+
+    if (mark <= 4)
+	{
+		lowMarksCount += 1;
+	}
+    
+	marksCount += mark;
+}
+if (isFaild)
+{
+    Console.WriteLine($"You need a break, {lowMarksCount} poor grades.");
+}
+else
+{
+    Console.WriteLine($"Average score: {marksCount / tasksCount:f2}");
+    Console.WriteLine($"Number of problems: {tasksCount}");
+    Console.WriteLine($"Last problem: {lastTask}");
+}
