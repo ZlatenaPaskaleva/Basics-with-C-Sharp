@@ -1,0 +1,35 @@
+double tripMoney = double.Parse(Console.ReadLine());
+double moneyCount = double.Parse(Console.ReadLine());
+
+int daysSpending = 0;
+int daysCounter = 0;
+while (moneyCount < tripMoney && daysSpending < 5)
+{
+    string command = Console.ReadLine();
+	double money = double.Parse(Console.ReadLine());
+    daysCounter += 1;
+
+    if (command == "spend")
+	{
+        moneyCount -= money;
+        daysSpending++;
+        if (moneyCount < 0)
+        {
+            moneyCount = 0;
+        }
+    }
+	else
+	{
+		moneyCount += money;
+        daysSpending = 0;
+    }
+}
+if (moneyCount >= tripMoney)
+{
+    Console.WriteLine($"You saved the money for {daysCounter} days.");
+}
+if (daysSpending == 5)
+{
+    Console.WriteLine("You can't save the money.");
+    Console.WriteLine(daysCounter);
+}
