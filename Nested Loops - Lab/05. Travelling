@@ -1,0 +1,16 @@
+while (true)
+{
+    string destination = Console.ReadLine();
+    if (destination == "End")
+    {
+        break;
+    }
+    double buget = double.Parse(Console.ReadLine());
+    double moneySaved = 0;
+    while (moneySaved < buget)
+    {
+        double sum = double.Parse(Console.ReadLine());
+        moneySaved += sum;
+    }
+    Console.WriteLine($"Going to {destination}!");
+}
