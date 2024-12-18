@@ -1,0 +1,34 @@
+int floors = int.Parse(Console.ReadLine());
+int rooms = int.Parse(Console.ReadLine());
+
+for (int i = floors; i >= 1; i--)
+{
+	string floorRooms = "";
+    if (i == floors)
+    {
+        for (int j = 0; j < rooms; j++)
+        {
+            floorRooms += $"L{i}{j} ";
+        }
+    }
+	else
+	{
+        if (i % 2 == 0)
+        {
+            for (int j = 0; j < rooms; j++)
+            {
+                floorRooms += $"O{i}{j} ";
+            }
+        }
+        else
+        {
+            for (int j = 0; j < rooms; j++)
+            {
+                floorRooms += $"A{i}{j} ";
+            }
+        }
+    }
+    Console.WriteLine(floorRooms.Trim());
+}
+
+  
