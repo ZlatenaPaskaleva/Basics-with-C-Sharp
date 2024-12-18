@@ -1,0 +1,28 @@
+int start = int.Parse(Console.ReadLine());
+int end = int.Parse(Console.ReadLine());
+int magicNum = int.Parse(Console.ReadLine());
+
+int combinationCount = 0;
+bool combinationFound = false;
+
+for (int i = start; i <= end; i++)
+{
+	for (int j = start; j <= end; j++)
+	{
+		combinationCount++;
+		if (i + j == magicNum)
+		{
+			Console.WriteLine($"Combination N:{combinationCount} ({i} + {j} = {magicNum})");
+			combinationFound = true;
+			break;
+		}
+	}
+	if (combinationFound == true)
+	{
+		break;
+	}
+}
+if (combinationFound == false)
+{
+	Console.WriteLine($"{combinationCount} combinations - neither equals {magicNum}");
+}
