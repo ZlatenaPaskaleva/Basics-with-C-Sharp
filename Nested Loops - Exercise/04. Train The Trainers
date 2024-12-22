@@ -1,0 +1,26 @@
+int numOftrainers = int.Parse(Console.ReadLine());
+string command = Console.ReadLine();
+double marksSum = 0;
+double avgSum = 0;
+double avgTotal = 0;
+int presentationCount = 0;
+
+while (command != "Finish")
+{
+    for (int i = 0; i < numOftrainers; i++)
+	{
+		double mark = double.Parse(Console.ReadLine());
+        marksSum += mark;
+    }
+	presentationCount += 1;
+    avgSum = marksSum / numOftrainers;
+    avgTotal += avgSum;
+
+    Console.WriteLine($"{command} - {avgSum:f2}.");
+	marksSum = 0;
+    command = Console.ReadLine();
+}
+if (command == "Finish")
+{
+	Console.WriteLine($"Student's final assessment is {avgTotal/ presentationCount:f2}.");
+}
