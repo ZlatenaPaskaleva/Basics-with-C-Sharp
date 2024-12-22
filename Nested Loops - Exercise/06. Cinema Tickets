@@ -1,0 +1,39 @@
+string command = Console.ReadLine();
+
+double standard = 0;
+double student = 0;
+double kids = 0;
+while (command != "Finish")
+{
+    int seats = int.Parse(Console.ReadLine());
+    double soldTickets = 0;
+    for (int i = 1; i <= seats; i++)
+    {
+        string seatType = Console.ReadLine();
+        if (seatType == "End")
+        {
+            break;
+        }
+        else if (seatType == "student")
+        {
+            student++;
+        }
+        else if (seatType == "standard")
+        {
+            standard++;
+        }
+        else if (seatType == "kid")
+        {
+            kids++;
+        }
+        soldTickets++;
+    }
+    Console.WriteLine($"{command} - {(soldTickets / seats) * 100:f2}% full.");
+    command = Console.ReadLine();
+}
+double countTotalTickets = standard + student + kids;
+Console.WriteLine($"Total tickets: {countTotalTickets}");
+Console.WriteLine($"{student / (standard + student + kids) * 100:f2}% student tickets.");
+Console.WriteLine($"{standard / (standard + student + kids) * 100:f2}% standard tickets.");
+Console.WriteLine($"{kids / (standard + student + kids) * 100:f2}% kids tickets.");
+       
